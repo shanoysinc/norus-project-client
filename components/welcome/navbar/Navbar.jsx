@@ -29,7 +29,7 @@ export const Navbar = () => {
       <NavLink to={"/"} name="Contact" />
 
       <Spacer />
-      <NavLink to={"/"} name="log in" />
+      <NavLink to={"/patient/login"} name="log in" />
 
       <Box paddingY="6">
         <Button colorScheme="telegram">Sign Up</Button>
