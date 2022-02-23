@@ -26,6 +26,14 @@ const index = () => {
           router.push("/patient");
         }
       },
+      onError: (error) => {
+        setError({
+          isError: true,
+          errorMessages: {
+            message: error.response.data.errorMessage,
+          },
+        });
+      },
     }
   );
 
