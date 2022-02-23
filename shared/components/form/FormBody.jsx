@@ -1,7 +1,7 @@
 import React from "react";
 import { FormControl } from "@chakra-ui/react";
 
-export const FormBody = ({ children }) => {
+export const FormBody = ({ children, isInvalid }) => {
   return (
     <FormControl
       marginTop={"6"}
@@ -11,6 +11,7 @@ export const FormBody = ({ children }) => {
       bg="gray.50"
       width={"xs"}
       boxShadow="md"
+      isInvalid={isInvalid}
     >
       {children}
     </FormControl>
