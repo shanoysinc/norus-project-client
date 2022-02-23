@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Center, Grid, GridItem, Link } from "@chakra-ui/react";
 import { JumbotronLeft, JumbotronRight, Navbar } from "../components/welcome";
+import NextLink from "next/link";
 
 export default function Home() {
   return (
@@ -31,6 +32,12 @@ export default function Home() {
           <GridItem colSpan={24} rowSpan={4} />
         </Grid>
       </>
+
+      <Center mb="2">
+        <NextLink href="/login/doctor" passHref>
+          <Link>doctor's portal</Link>
+        </NextLink>
+      </Center>
     </div>
   );
 }
