@@ -10,6 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { NavLink } from "./components";
+
 export const Navbar = () => {
   return (
     <Flex>
@@ -29,10 +30,12 @@ export const Navbar = () => {
       <NavLink to={"/"} name="Contact" />
 
       <Spacer />
-      <NavLink to={"/patient/login"} name="log in" />
+      <NavLink to={"/login"} name="log in" />
 
       <Box paddingY="6">
-        <Button colorScheme="telegram">Sign Up</Button>
+        <NextLink href="/signup" passHref>
+          <Button colorScheme="telegram">Sign Up</Button>
+        </NextLink>
       </Box>
     </Flex>
   );
