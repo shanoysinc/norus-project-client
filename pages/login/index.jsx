@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Login } from "../../components/patient/Login";
+import { Login } from "../../components/login/Login";
 import { useMutation } from "react-query";
 import { baseApiClient } from "../../lib/axios/baseApiClient";
 import { useAuth } from "../../hooks";

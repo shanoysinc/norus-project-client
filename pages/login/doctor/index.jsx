@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "react-query";
-import { Login } from "../../../components/patient/Login";
+import { Login } from "../../../components/login/Login";
 import { useErrroCheck } from "../../../hooks/error/useErrroCheck";
 import validator from "validator";
 import { baseApiClient } from "../../../lib/axios/baseApiClient";
