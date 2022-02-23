@@ -10,6 +10,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
 
 export const JumbotronLeft = () => {
   return (
@@ -37,10 +38,12 @@ export const JumbotronLeft = () => {
           </Text>
         </Box>
         <Box>
-          <Button colorScheme="orange" size="lg" marginTop={"4"}>
-            Make an appointment
-            <ArrowForwardIcon w={6} h={6} />
-          </Button>
+          <NextLink href="/login" passHref>
+            <Button colorScheme="orange" size="lg" marginTop={"4"}>
+              Make an appointment
+              <ArrowForwardIcon w={6} h={6} />
+            </Button>
+          </NextLink>
         </Box>
       </VStack>
     </>
