@@ -14,9 +14,10 @@ const index = () => {
   const { setAuth } = useAuth();
   const router = useRouter();
 
-  const info = { email: "shanoy@gmail.com", password: "123456" };
+  //test data
+  // const info = { email: "shanoy@gmail.com", password: "123456" };
   const mutation = useMutation(
-    (loginInfo) => baseApiClient.post("/doctor/login", info),
+    (loginInfo) => baseApiClient.post("/doctor/login", loginInfo),
     {
       onSuccess: (res) => {
         const data = res.data;
@@ -26,6 +27,14 @@ const index = () => {
           localStorage.setItem("token", token);
           router.push("/doctor");
         }
+      },
+      onError: (error) => {
+        setError({
+          isError: true,
+          errorMessages: {
+            message: error.response.data.errorMessage,
+          },
+        });
       },
     }
   );
