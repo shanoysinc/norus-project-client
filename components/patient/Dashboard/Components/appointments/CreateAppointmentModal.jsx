@@ -32,7 +32,6 @@ const symptoms = [
 ];
 export const CreateAppointmentModal = ({ isOpen, onClose, token, doctor }) => {
   const [startDate, setStartDate] = useState(new Date());
-  console.log("startdat", startDate);
   const [symptom, setSymptom] = useState("Check in with Doctor");
   const [details, setDetails] = useState("");
   const queryClient = useQueryClient();
