@@ -26,6 +26,7 @@ export function RootApp({ Component, pageProps }) {
       ) {
         return router.push("/login");
       }
+      return router.push("/");
     }
 
     async function getPatient() {
@@ -54,7 +55,7 @@ export function RootApp({ Component, pageProps }) {
             }
           }
         })
-        .catch(() => {
+        .catch((error) => {
           localStorage.removeItem("token");
           router.push("/login");
         });
@@ -62,7 +63,6 @@ export function RootApp({ Component, pageProps }) {
     if (userRole === Roles.DOCTOR) {
       getDoctor()
         .then((res) => {
-          console.log(res);
           const { data } = res;
           if (data.auth && data.doctor) {
             setAuth(data);
@@ -72,7 +72,7 @@ export function RootApp({ Component, pageProps }) {
             }
           }
         })
-        .catch(() => {
+        .catch((error) => {
           localStorage.removeItem("token");
           router.push("/login");
         });
