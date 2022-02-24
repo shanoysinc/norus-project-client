@@ -1,8 +1,25 @@
 import { Badge, Box, Heading, Text } from "@chakra-ui/react";
 import React from "react";
-
+import { useQuery } from "react-query";
+import { CustomSpinner } from "../../../../../shared/components/spinner/CustomSpinner";
 import { Timeline, Event } from "react-trivial-timeline";
-export const TimeLine = () => {
+import { baseApiClient } from "../../../../../lib/axios/baseApiClient";
+import { TimlineEvent } from "./TimlineEvent";
+export const TimeLine = ({ token }) => {
+  const { data, isLoading } = useQuery("patientTimline", () =>
+    baseApiClient("/patient/timeline", {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    })
+  );
+
+  if (isLoading) {
+    return <CustomSpinner color="white" />;
+  }
+
+  const timelineData = data.data.patientTimeline;
+  console.log("timline", timelineData);
   return (
     <>
       <Heading color="whiteAlpha.900" mb="4">
@@ -19,52 +36,13 @@ export const TimeLine = () => {
         overflowY="auto"
       >
         <Timeline lineColor={"black"}>
-          <Event
-            interval={{ start: 2010 }}
-            // title="Event title"
-            // subtitle="Subtitle"
-            lineColor="#007AB8;"
-            intervalBackground={"black"}
-            intervalColor="white"
-            title={"hello"}
-          >
-            <Text color="white">
-              Working out{" "}
-              <Badge ml="4" colorScheme="green">
-                approved
-              </Badge>
-            </Text>
-          </Event>
-          <Event
-            title={"hello"}
-            intervalBackground={"black"}
-            intervalColor="white"
-            interval="2016 – 2019"
-            // title="Some text"
-            lineColor={"orange"}
-          >
-            <Text color="white">
-              Sleepy
-              <Badge ml="4" colorScheme="red">
-                Decline
-              </Badge>
-            </Text>
-          </Event>
-          <Event
-            title={"hello"}
-            intervalBackground={"black"}
-            intervalColor="white"
-            interval="2016 – 2019"
-            // title="Some text"
-            lineColor={"orange"}
-          >
-            <Text color="white">
-              Sleepy
-              <Badge ml="4" colorScheme="purple">
-                Decline
-              </Badge>
-            </Text>
-          </Event>
+          {timelineData.map((item) => (
+            <TimlineEvent
+              key={item._id}
+              approve={item.approve}
+              symptom={item.appointment.symptom}
+            />
+          ))}
         </Timeline>
       </Box>
     </>
