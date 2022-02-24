@@ -67,15 +67,15 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
 
   if (!hasAppointments) {
     return (
-      <Flex flexDirection={"column"}>
+      <Flex flexDirection={"column"} pl="10">
         <Heading mb="8" color="whiteAlpha.900">
-          <Flex alignItems={"flex-end"} pl="10">
+          <Flex alignItems={"flex-end"}>
             <Text pr="10">Your Appointments</Text>{" "}
             <AppointmentModalButton token={token} doctor={doctor} />
           </Flex>
         </Heading>
-        <Text>You current have no appointments</Text>
-        <AppointmentModalButton token={token} doctor={doctor} />
+
+        <Text color="whiteAlpha.900">You current have no appointments</Text>
       </Flex>
     );
   }
@@ -110,7 +110,7 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
         <Tbody>
           {sortAppointment.map((appointment, index) => (
             <Tr key={index}>
-              <Td>{format(new Date(appointment.date), "MM/dd/yyyy")}</Td>
+              <Td>{format(new Date(appointment.date), "MMM dd, yyyy.")}</Td>
               <Td>{appointment.symptom}</Td>
               <Td>{appointment.approve ? "Yes" : "No"}</Td>
               <Td>{format(parseISO(appointment.time), "h:mm a")}</Td>
