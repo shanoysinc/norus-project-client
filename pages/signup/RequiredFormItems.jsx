@@ -11,6 +11,7 @@ import {
   Radio,
   RadioGroup,
   Stack,
+  FormErrorMessage,
 } from "@chakra-ui/react";
 import { FormBody } from "../../shared/components/form";
 
@@ -24,6 +25,7 @@ export const RequiredFormItems = ({
   setGender,
   age,
   setAge,
+  error,
 }) => {
   const emailhandler = (e) => setEmail(e.target.value);
   const passwordHandler = (e) => setPassword(e.target.value);
@@ -33,7 +35,7 @@ export const RequiredFormItems = ({
   const handleAgeChange = (newAge) => setAge(newAge);
 
   return (
-    <FormBody isRequired={true}>
+    <FormBody isRequired={true} isInvalid={error.isError}>
       <FormLabel htmlFor="firstName" color="gray.700">
         First Name
       </FormLabel>
@@ -76,6 +78,8 @@ export const RequiredFormItems = ({
         id="age"
         maxW="100px"
         mr="2rem"
+        min={0}
+        max={120}
         value={age}
         onChange={handleAgeChange}
         bg="blackAlpha.50"
@@ -97,6 +101,7 @@ export const RequiredFormItems = ({
         type="text"
         bg="blackAlpha.50"
         mb="4"
+        isRequired
       />
 
       <FormLabel htmlFor="email" color="gray.700">
@@ -110,8 +115,9 @@ export const RequiredFormItems = ({
         bg="blackAlpha.50"
         mb="4"
       />
-      {/* <FormErrorMessage>Email is required.</FormErrorMessage> */}
-
+      {error.isError && error.errorMessages.email ? (
+        <FormErrorMessage>{error.errorMessages.email}</FormErrorMessage>
+      ) : null}
       <FormLabel htmlFor="password" color="gray.700">
         Password
       </FormLabel>
@@ -122,10 +128,13 @@ export const RequiredFormItems = ({
         bg="blackAlpha.50"
         mb="4"
       />
+      {error.isError && error.errorMessages.password ? (
+        <FormErrorMessage>{error.errorMessages.password}</FormErrorMessage>
+      ) : null}
 
-      <Button colorScheme="telegram" w={"100%"} size="md" marginTop={"6"}>
-        Sign up
-      </Button>
+      {error.isError && error.errorMessages.message ? (
+        <FormErrorMessage>{error.errorMessages.message}</FormErrorMessage>
+      ) : null}
     </FormBody>
   );
 };

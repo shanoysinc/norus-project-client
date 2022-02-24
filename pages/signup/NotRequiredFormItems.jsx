@@ -15,14 +15,14 @@ import {
 } from "@chakra-ui/react";
 import { FormBody } from "../../shared/components/form";
 
-export const NotRequiredFormItems = (
-  setheight,
+export const NotRequiredFormItems = ({
+  setHeight,
   setWeight,
   setOccupation,
   setAddress,
-  setmedicalHistoryDetails
-) => {
-  const heightHandler = (e) => setheight(e.target.value);
+  setmedicalHistoryDetails,
+}) => {
+  const heightHandler = (e) => setHeight(e.target.value);
   const weightHandler = (e) => setWeight(e.target.value);
   const occupationHandler = (e) => setOccupation(e.target.value);
   const addressHandler = (e) => setAddress(e.target.value);
