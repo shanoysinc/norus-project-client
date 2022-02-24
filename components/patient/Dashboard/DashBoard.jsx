@@ -41,7 +41,7 @@ export const DashBoard = () => {
         />
       </GridItem>
       <GridItem colSpan={8} colStart={"15"}>
-        <TimeLine />
+        <TimeLine token={auth.patient.token} />
       </GridItem>
       <GridItem colSpan={20} colStart={"2"} mt="10">
         <Appointments
