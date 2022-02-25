@@ -33,7 +33,10 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
         let upComming = 0;
 
         res.data.appointments.forEach((appointment) => {
-          if (isAfter(new Date(appointment.date), new Date())) {
+          if (
+            isAfter(new Date(appointment.date), new Date()) &&
+            appointment.approve === true
+          ) {
             upComming += 1;
           }
         });
