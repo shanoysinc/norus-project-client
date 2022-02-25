@@ -1,22 +1,9 @@
 import React, { useEffect } from "react";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Box,
-  Text,
-} from "@chakra-ui/react";
-import { format, isTomorrow, parseISO, addDays, isAfter } from "date-fns";
-import { DoctorsPatient } from "./DoctorsPatient";
+import { Accordion } from "@chakra-ui/react";
+import { isTomorrow, addDays, isAfter } from "date-fns";
 import { AccordionCustomItem } from "./AccordionCustomItem";
 
-export const UpcomingAppointments = ({
-  appointments,
-  token,
-  setNumOfUpcomingAppointments,
-}) => {
+export const UpcomingAppointments = ({ appointments, token }) => {
   const tomorrowsAppointments = appointments.filter((appointment) =>
     isTomorrow(new Date(appointment.date))
   );
@@ -26,11 +13,9 @@ export const UpcomingAppointments = ({
     isAfter(new Date(appointment.date), tomorrowDate)
   );
 
-  useEffect(() => {
-    setNumOfUpcomingAppointments(
-      tomorrowsAppointments.length + upCommingAppointments.length
-    );
-  }, []);
+  // useEffect(() => {
+
+  // }, []);
 
   return (
     <Accordion allowToggle defaultIndex={[0]}>

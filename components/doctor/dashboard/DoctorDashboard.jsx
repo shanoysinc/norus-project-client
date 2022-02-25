@@ -7,15 +7,35 @@ import { useQuery, useQueryClient } from "react-query";
 import { CustomSpinner } from "../../../shared/components/spinner/CustomSpinner";
 import { getTodayAppointment } from "../../../lib/getTodayAppointments";
 import { UpcomingAppointments } from "./components/UpcomingAppointments";
+import { isAfter, subDays } from "date-fns";
 
 export const DoctorDashboard = ({ doctor, docFullName }) => {
   const [numOfUpcomingAppointments, setNumOfUpcomingAppointments] = useState(0);
-  const { data, isLoading, isError } = useQuery("doctorsAppointments", () =>
-    baseApiClient.get("/doctor/appointments", {
-      headers: {
-        authorization: `Bearer ${doctor.token}`,
+  // const [numOfAppointments, setNumOfAppointments] = useState(0);
+  // const [numOfPatients, setNumOfPatients] = useState(0);
+  const { data, isLoading, isError } = useQuery(
+    "doctorsAppointments",
+    () =>
+      baseApiClient.get("/doctor/appointments", {
+        headers: {
+          authorization: `Bearer ${doctor.token}`,
+        },
+      }),
+    {
+      onSuccess: (data) => {
+        let numOfUpcommingApp = 0;
+        data.data.appointments.forEach((appointment) => {
+          const yesterday = subDays(new Date(), 1);
+          if (
+            isAfter(new Date(appointment.date), yesterday) &&
+            appointment.approve == true
+          ) {
+            numOfUpcommingApp += 1;
+          }
+        });
+        setNumOfUpcomingAppointments(numOfUpcommingApp);
       },
-    })
+    }
   );
 
   if (isError) {
@@ -67,7 +87,6 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
             <UpcomingAppointments
               token={doctor.token}
               appointments={appointments}
-              setNumOfUpcomingAppointments={setNumOfUpcomingAppointments}
             />
           </GridItem>
         </Grid>
