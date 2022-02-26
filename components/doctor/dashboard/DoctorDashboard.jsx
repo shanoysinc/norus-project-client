@@ -56,7 +56,13 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
 
   return (
     <Box marginX="10" marginY={"2"}>
-      <Heading color="whiteAlpha.900" size={"lg"} ml="14" mb="4">
+      <Heading
+        color="whiteAlpha.900"
+        size={"lg"}
+        ml="14"
+        mb="4"
+        textTransform={"capitalize"}
+      >
         Hello Dr. {docFullName}
       </Heading>
       <Grid w={"100%"} templateColumns="repeat(24, 1fr)" color="whiteAlpha.900">
