@@ -13,10 +13,6 @@ export const UpcomingAppointments = ({ appointments, token }) => {
     isAfter(new Date(appointment.date), tomorrowDate)
   );
 
-  // useEffect(() => {
-
-  // }, []);
-
   return (
     <Accordion allowToggle defaultIndex={[0]}>
       <AccordionCustomItem

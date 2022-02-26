@@ -27,7 +27,9 @@ export const Statistics = ({
               Patients
             </Text>
           </Flex>
-          <Text mt="4">{numOfPatients}</Text>
+          <Text mt="8" fontSize={"3xl"} fontWeight="bold">
+            {numOfPatients}
+          </Text>
         </Box>
         <Box bg="gray.700" borderRadius={"4"} p="15">
           <Flex alignItems={"center"}>
@@ -38,7 +40,9 @@ export const Statistics = ({
               Total Appointments
             </Text>
           </Flex>
-          <Text mt="4">{numOfAppointments}</Text>
+          <Text mt="4" fontSize={"3xl"} fontWeight="bold">
+            {numOfAppointments}
+          </Text>
         </Box>
         <Box bg="gray.700" borderRadius={"4"} p="15">
           <Flex alignItems={"center"}>
@@ -49,7 +53,9 @@ export const Statistics = ({
               Upcoming Appointments
             </Text>
           </Flex>
-          <Text mt="4">{numOfUpcomingAppointments}</Text>
+          <Text mt="4" fontSize={"3xl"} fontWeight="bold">
+            {numOfUpcomingAppointments}
+          </Text>
         </Box>
       </Flex>
     </Box>

@@ -1,8 +1,8 @@
-import { Badge, Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
 import { useQuery } from "react-query";
 import { CustomSpinner } from "../../../../../shared/components/spinner/CustomSpinner";
-import { Timeline, Event } from "react-trivial-timeline";
+import { Timeline } from "react-trivial-timeline";
 import { baseApiClient } from "../../../../../lib/axios/baseApiClient";
 import { TimlineEvent } from "./TimlineEvent";
 export const TimeLine = ({ token }) => {
@@ -19,7 +19,6 @@ export const TimeLine = ({ token }) => {
   }
 
   const timelineData = data.data.patientTimeline;
-  console.log("timline", timelineData);
   return (
     <>
       <Heading color="whiteAlpha.900" mb="4">

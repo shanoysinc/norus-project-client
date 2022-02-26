@@ -15,16 +15,11 @@ const index = () => {
   const docFullName = `${auth.doctor.firstName} ${auth.doctor.lastName}`;
   return (
     <>
-      <Grid
-        h="100%"
-        templateRows="repeat(24, 1fr)"
-        templateColumns="repeat(24, 1fr)"
-        bg="gray.700"
-      >
+      <Grid h="100%" templateColumns="repeat(24, 1fr)" bg="gray.700">
         <GridItem rowSpan={2} colSpan={24}>
           <UserNavBar name={docFullName} />
         </GridItem>
-        <GridItem colSpan={24} rowSpan={24} rowStart="4">
+        <GridItem colSpan={24} mt="10">
           <DoctorDashboard doctor={auth.doctor} docFullName={docFullName} />
         </GridItem>
       </Grid>

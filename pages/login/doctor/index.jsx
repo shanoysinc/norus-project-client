@@ -14,8 +14,6 @@ const index = () => {
   const { setAuth } = useAuth();
   const router = useRouter();
 
-  //test data
-  // const info = { email: "shanoy@gmail.com", password: "123456" };
   const mutation = useMutation(
     (loginInfo) => baseApiClient.post("/doctor/login", loginInfo),
     {

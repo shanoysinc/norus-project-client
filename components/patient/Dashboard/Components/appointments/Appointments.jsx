@@ -13,6 +13,7 @@ import {
   Center,
   Flex,
   Text,
+  Box,
 } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import { baseApiClient } from "../.../../../../../../lib/axios/baseApiClient.js";
@@ -90,7 +91,7 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
   );
 
   return (
-    <>
+    <Box>
       <Heading mb="8" color="whiteAlpha.900">
         <Flex alignItems={"flex-end"} pl="10">
           <Text pr="10">Your Appointments</Text>{" "}
@@ -122,6 +123,6 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
           ))}
         </Tbody>
       </Table>
-    </>
+    </Box>
   );
 };

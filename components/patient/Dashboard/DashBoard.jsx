@@ -1,11 +1,4 @@
-import {
-  Center,
-  Flex,
-  Grid,
-  GridItem,
-  Heading,
-  Spinner,
-} from "@chakra-ui/react";
+import { Center, Grid, GridItem, Spinner } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useAuth } from "../../../hooks";
 import { Appointments } from "./Components/appointments/Appointments";
