@@ -5,8 +5,8 @@ import {
   FormFooter,
   FormHeader,
 } from "../../shared/components/form";
-import { RequiredFormItems } from "./RequiredFormItems";
-import { NotRequiredFormItems } from "./NotRequiredFormItems";
+import { RequiredFormItems } from "../../components/forms/RequiredFormItems";
+import { NotRequiredFormItems } from "../../components/forms/NotRequiredFormItems";
 import { useErrroCheck } from "../../hooks/error/useErrroCheck";
 import { useMutation } from "react-query";
 import { baseApiClient } from "../../lib/axios/baseApiClient";
