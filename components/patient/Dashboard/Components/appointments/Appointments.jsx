@@ -14,6 +14,7 @@ import {
   Flex,
   Text,
   Box,
+  Badge,
 } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import { baseApiClient } from "../.../../../../../../lib/axios/baseApiClient.js";
@@ -115,8 +116,22 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
           {sortAppointment.map((appointment, index) => (
             <Tr key={index}>
               <Td>{format(new Date(appointment.date), "MMM dd, yyyy.")}</Td>
-              <Td>{appointment.symptom}</Td>
-              <Td>{appointment.approve ? "Yes" : "No"}</Td>
+              <Td>
+                <Badge ml="4" colorScheme={"yellow"}>
+                  {appointment.symptom}
+                </Badge>
+              </Td>
+              <Td>
+                {appointment.approve ? (
+                  <Badge ml="4" colorScheme={"green"}>
+                    Yes
+                  </Badge>
+                ) : (
+                  <Badge ml="4" colorScheme={"red"}>
+                    No
+                  </Badge>
+                )}
+              </Td>
               <Td>{format(parseISO(appointment.time), "h:mm a")}</Td>
               <Td>{appointment.details}</Td>
             </Tr>
