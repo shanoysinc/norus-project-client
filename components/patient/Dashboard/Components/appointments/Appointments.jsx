@@ -53,7 +53,6 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
   if (isLoading) {
     return (
       <Flex flexDirection={"column"}>
-        <Heading mb="8">Your Appointments</Heading>
         <Center>
           <Spinner
             thickness="4px"
@@ -72,8 +71,8 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
 
   if (!hasAppointments) {
     return (
-      <Flex flexDirection={"column"} pl="10">
-        <Heading mb="8" color="whiteAlpha.900">
+      <Flex flexDirection={"column"} pl="10" pb="10">
+        <Heading mb="10" color="whiteAlpha.900">
           <Flex alignItems={"flex-end"}>
             <Text pr="10">Your Appointments</Text>{" "}
             <AppointmentModalButton token={token} doctor={doctor} />
@@ -93,8 +92,8 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
 
   return (
     <Box>
-      <Heading mb="8" color="whiteAlpha.900">
-        <Flex alignItems={"flex-end"} pl="10">
+      <Heading color="whiteAlpha.900">
+        <Flex alignItems={"flex-end"} mb="10" pl="10">
           <Text pr="10">Your Appointments</Text>{" "}
           <AppointmentModalButton token={token} doctor={doctor} />
         </Flex>
