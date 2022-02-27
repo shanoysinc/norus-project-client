@@ -26,7 +26,6 @@ export const DashBoard = () => {
     );
   }
 
-  console.log(auth.patient);
   return (
     <Grid w={"100%"} templateColumns="repeat(24, 1fr)">
       <GridItem colSpan={13} colStart="2">
