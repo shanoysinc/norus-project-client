@@ -17,7 +17,7 @@ export default function Home() {
           h="100vh"
           templateColumns="repeat(24, 1fr)"
           gap={4}
-          paddingX={"16"}
+          paddingX={["4", "8", "16"]}
         >
           <GridItem rowSpan={3} colSpan={24} rowStart="2">
             <Navbar />
