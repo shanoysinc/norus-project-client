@@ -16,7 +16,7 @@ export const CustomSpinner = ({
           emptyColor="gray.200"
           color="blue.500"
           size="xl"
-          ml="10"
+          ml="4"
         />
         <Center>
           <Text color={color}>{message}</Text>

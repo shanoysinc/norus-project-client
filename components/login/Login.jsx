@@ -5,6 +5,8 @@ import {
   Button,
   Flex,
   FormErrorMessage,
+  Spinner,
+  Text,
 } from "@chakra-ui/react";
 import {
   FormBody,
@@ -19,6 +21,7 @@ export const Login = ({
   setPassword,
   submitButton,
   error,
+  isLoading,
 }) => {
   const emailHandler = (e) => {
     setEmail(e.target.value);
@@ -59,7 +62,7 @@ export const Login = ({
             size="md"
             marginTop={"6"}
           >
-            Login
+            {isLoading ? <Spinner size="md" /> : <Text>Login</Text>}
           </Button>
           {error.isError && error.errorMessages.message ? (
             <FormErrorMessage>{error.errorMessages.message}</FormErrorMessage>

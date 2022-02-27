@@ -14,7 +14,7 @@ const index = () => {
   const [password, setPassword] = useState("");
   const { error, setError } = useErrorCheck();
 
-  const mutation = useMutation(
+  const { isLoading, mutate } = useMutation(
     (loginInfo) => baseApiClient.post("/patient/login", loginInfo),
     {
       onSuccess: (res) => {
@@ -61,7 +61,7 @@ const index = () => {
     if (error.isError) {
       setError({ errorMessages: {}, isError: false });
     }
-    mutation.mutate({ email: email.trim(), password });
+    mutate({ email: email.trim(), password });
   };
 
   return (
@@ -71,6 +71,7 @@ const index = () => {
       setPassword={setPassword}
       submitButton={submitButton}
       error={error}
+      isLoading={isLoading}
     />
   );
 };

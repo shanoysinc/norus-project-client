@@ -15,9 +15,10 @@ import {
   FormLabel,
   Heading,
   Text,
-  Flex,
   FormErrorMessage,
   FormControl,
+  Spinner,
+  useToast,
 } from "@chakra-ui/react";
 import { useMutation } from "react-query";
 import { baseApiClient } from "../../../../lib/axios/baseApiClient";
@@ -25,11 +26,12 @@ import { useErrorCheck } from "../../../../hooks/error/useErrorCheck";
 import { useRouter } from "next/router";
 
 export const DeleteUserModal = ({ token }) => {
+  const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [password, setPassword] = useState("");
   const { error, setError } = useErrorCheck();
   const router = useRouter();
-  const mutation = useMutation(
+  const { isLoading, mutate } = useMutation(
     (userPassword) =>
       baseApiClient.post("/patient/data", userPassword, {
         headers: {
@@ -40,6 +42,12 @@ export const DeleteUserModal = ({ token }) => {
       onSuccess: (res) => {
         const data = res.data;
         if (data.success) {
+          toast({
+            title: `You have successfully deleted your account`,
+            status: "success",
+            isClosable: true,
+            position: "top",
+          });
           localStorage.removeItem("token");
           router.push("/");
         }
@@ -58,7 +66,7 @@ export const DeleteUserModal = ({ token }) => {
   const deleteUserHandler = () => {
     if (password.length < 1) return;
 
-    mutation.mutate({ password });
+    mutate({ password });
   };
 
   return (
@@ -105,7 +113,11 @@ export const DeleteUserModal = ({ token }) => {
               Cancel
             </Button>
             <Button colorScheme="red" mr={3} onClick={deleteUserHandler}>
-              Delete your profile
+              {isLoading ? (
+                <Spinner size="md" />
+              ) : (
+                <Text> Delete your profile</Text>
+              )}
             </Button>
           </ModalFooter>
         </ModalContent>

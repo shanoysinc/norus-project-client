@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Center, Flex } from "@chakra-ui/react";
+import { Button, Center, Flex, Spinner, Text } from "@chakra-ui/react";
 import {
   FormContainer,
   FormFooter,
@@ -33,7 +33,7 @@ const Signup = () => {
     React.useState("N/A");
   const router = useRouter();
 
-  const mutation = useMutation(
+  const { isLoading, mutate } = useMutation(
     (signUpInfo) => baseApiClient.post("/patient/signup", signUpInfo),
     {
       onSuccess: (res) => {
@@ -81,7 +81,7 @@ const Signup = () => {
     if (error.isError) {
       setError({ errorMessages: {}, isError: false });
     }
-    mutation.mutate({
+    mutate({
       firstName: firstName.trim(),
       lastName: lastName.trim(),
       occupation: occupation.trim(),
@@ -132,7 +132,7 @@ const Signup = () => {
             size="md"
             marginTop={"6"}
           >
-            Sign up
+            {isLoading ? <Spinner size="md" /> : <Text> Sign up</Text>}
           </Button>
         </Center>
 

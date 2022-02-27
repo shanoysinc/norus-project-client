@@ -14,7 +14,7 @@ const index = () => {
   const { setAuth } = useAuth();
   const router = useRouter();
 
-  const mutation = useMutation(
+  const { isLoading, mutate } = useMutation(
     (loginInfo) => baseApiClient.post("/doctor/login", loginInfo),
     {
       onSuccess: (res) => {
@@ -62,7 +62,7 @@ const index = () => {
     if (error.isError) {
       setError({ errorMessages: {}, isError: false });
     }
-    mutation.mutate({ email: email.trim(), password });
+    mutate({ email: email.trim(), password });
   };
   return (
     <Login
@@ -71,6 +71,7 @@ const index = () => {
       setPassword={setPassword}
       submitButton={submitButton}
       error={error}
+      isLoading={isLoading}
     />
   );
 };

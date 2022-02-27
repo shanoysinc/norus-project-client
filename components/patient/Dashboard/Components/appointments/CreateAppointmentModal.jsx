@@ -9,9 +9,11 @@ import {
   ModalCloseButton,
   Button,
   FormLabel,
-  Input,
+  Text,
   Select,
   Textarea,
+  Spinner,
+  useToast,
 } from "@chakra-ui/react";
 import DatePicker from "react-datepicker";
 
@@ -31,6 +33,7 @@ const symptoms = [
   "sinus",
 ];
 export const CreateAppointmentModal = ({ isOpen, onClose, token, doctor }) => {
+  const toast = useToast();
   const [startDate, setStartDate] = useState(new Date());
   const [symptom, setSymptom] = useState("Check in with Doctor");
   const [details, setDetails] = useState("");
@@ -40,7 +43,7 @@ export const CreateAppointmentModal = ({ isOpen, onClose, token, doctor }) => {
     setSymptom(e.target.value);
   };
 
-  const mutation = useMutation(
+  const { isLoading, mutate } = useMutation(
     (newAppointment) =>
       baseApiClient.post("/patient/appointment", newAppointment, {
         headers: {
@@ -50,6 +53,12 @@ export const CreateAppointmentModal = ({ isOpen, onClose, token, doctor }) => {
 
     {
       onSuccess: () => {
+        toast({
+          title: `Dr. ${doctor.firstName} will response to this appointment in the next 24hrs. `,
+          status: "success",
+          isClosable: true,
+          position: "top",
+        });
         queryClient.invalidateQueries("appointments");
         queryClient.invalidateQueries("doctorsAppointments");
         onClose();
@@ -62,7 +71,7 @@ export const CreateAppointmentModal = ({ isOpen, onClose, token, doctor }) => {
       return;
     }
 
-    mutation.mutate({
+    mutate({
       doctor: doctor._id,
       date: startDate,
       symptom,
@@ -125,7 +134,7 @@ export const CreateAppointmentModal = ({ isOpen, onClose, token, doctor }) => {
             colorScheme="orange"
             mr={3}
           >
-            Create
+            {isLoading ? <Spinner size="md" /> : <Text> Create</Text>}
           </Button>
         </ModalFooter>
       </ModalContent>
