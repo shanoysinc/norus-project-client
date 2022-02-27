@@ -27,7 +27,7 @@ export const DashBoard = () => {
   }
 
   return (
-    <Grid w={"100%"} templateColumns="repeat(24, 1fr)">
+    <Grid templateColumns="repeat(24, 1fr)" mt="10">
       <GridItem colSpan={13} colStart="2">
         <PatientProfile
           patient={auth.patient}
@@ -37,7 +37,7 @@ export const DashBoard = () => {
       <GridItem colSpan={8} colStart={"16"}>
         <TimeLine token={auth.patient.token} />
       </GridItem>
-      <GridItem colSpan={20} colStart={"2"} mt="10">
+      <GridItem colSpan={20} colStart={"2"} mt="4">
         <Appointments
           doctor={auth.patient.doctor}
           token={auth.patient.token}
