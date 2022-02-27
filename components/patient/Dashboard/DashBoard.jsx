@@ -27,17 +27,22 @@ export const DashBoard = () => {
   }
 
   return (
-    <Grid templateColumns="repeat(24, 1fr)" mt="10">
-      <GridItem colSpan={13} colStart="2">
+    <Grid templateColumns="repeat(24, 1fr)" mt={["20", "20", "20", "10"]}>
+      <GridItem colSpan={[13]} colStart="2">
         <PatientProfile
           patient={auth.patient}
           appointmentStats={appointmentStats}
         />
       </GridItem>
-      <GridItem colSpan={8} colStart={"16"}>
+      <GridItem
+        colSpan={[20, 20, 20, 8]}
+        colStart={["2", "2", "2", "16"]}
+        rowStart={["2", "2", "2,", "1"]}
+        mt={["20", "20", "20", "0"]}
+      >
         <TimeLine token={auth.patient.token} />
       </GridItem>
-      <GridItem colSpan={20} colStart={"2"} mt="4">
+      <GridItem colSpan={20} colStart={"2"} mt={["20", "20", "20", "4"]}>
         <Appointments
           doctor={auth.patient.doctor}
           token={auth.patient.token}

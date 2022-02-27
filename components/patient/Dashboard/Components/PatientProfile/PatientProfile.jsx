@@ -10,7 +10,7 @@ export const PatientProfile = ({ patient, appointmentStats }) => {
       <Heading color="whiteAlpha.900" mb="4">
         Your Profile
       </Heading>
-      <Box bg="gray.800" p="10" borderRadius={"4"}>
+      <Box bg="gray.800" p={["6", "10"]} borderRadius={"4"}>
         <Flex>
           <PatientProfileHead
             patient={patient}
