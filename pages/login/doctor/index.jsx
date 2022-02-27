@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "react-query";
 import { Login } from "../../../components/login/Login";
-import { useErrroCheck } from "../../../hooks/error/useErrroCheck";
+import { useErrorCheck } from "../../../hooks/error/useErrorCheck";
 import validator from "validator";
 import { baseApiClient } from "../../../lib/axios/baseApiClient";
 import { useAuth } from "../../../hooks";
@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 const index = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { error, setError } = useErrroCheck();
+  const { error, setError } = useErrorCheck();
   const { setAuth } = useAuth();
   const router = useRouter();
 
