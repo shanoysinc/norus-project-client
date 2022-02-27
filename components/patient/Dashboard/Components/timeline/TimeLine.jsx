@@ -30,14 +30,16 @@ export const TimeLine = ({ token }) => {
         // p="10"
         pl="10"
         pt="4"
+        pb="8"
         borderRadius={"4"}
-        height="300px"
+        height="350px"
         overflowY="auto"
       >
         <Timeline lineColor={"black"}>
           {timelineData.map((item) => (
             <TimlineEvent
               key={item._id}
+              createdAt={item.createdAt}
               approve={item.approve}
               symptom={item.appointment.symptom}
             />
