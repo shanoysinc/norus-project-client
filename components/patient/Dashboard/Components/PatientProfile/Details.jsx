@@ -9,7 +9,12 @@ export const Details = ({ title, info }) => {
         alignItems="center"
         justifyContent={"center"}
       >
-        <Text fontSize={"sm"} color="whiteAlpha.900" textAlign={"center"}>
+        <Text
+          fontSize={"md"}
+          color="teal.100"
+          textAlign={"center"}
+          textTransform="capitalize"
+        >
           {title}
         </Text>
         <Text
