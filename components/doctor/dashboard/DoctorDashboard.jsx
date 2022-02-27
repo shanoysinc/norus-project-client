@@ -65,6 +65,15 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
       >
         Hello Dr. {docFullName}
       </Heading>
+      <Heading
+        color="whiteAlpha.900"
+        size={"md"}
+        // ml="14"
+        mb="4"
+        textTransform={"capitalize"}
+      >
+        Statistics
+      </Heading>
       <Grid
         w={"100%"}
         templateColumns="repeat(3, 1fr)"
@@ -106,12 +115,12 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
         >
           <Heading
             color="whiteAlpha.900"
-            size={"lg"}
+            size={"md"}
             // ml="14"
             mb="4"
             textTransform={"capitalize"}
           >
-            Future Appointment
+            Future Appointments
           </Heading>
           <UpcomingAppointments
             token={doctor.token}
