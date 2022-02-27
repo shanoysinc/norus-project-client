@@ -14,10 +14,10 @@ export const Statistics = ({
       bg="gray.800"
       p="10"
       borderRadius={"4"}
-      width={"fit-content"}
       height="fit-content"
+      // w={"min-content"}
     >
-      <Flex gap="4">
+      <Flex gap="4" wrap={["wrap", "wrap", "nowrap"]}>
         <Box bg="gray.700" borderRadius={"4"} p="15">
           <Flex alignItems={"center"}>
             <CustomIcon bg="red">

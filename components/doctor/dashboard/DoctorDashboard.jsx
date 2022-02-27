@@ -1,4 +1,4 @@
-import { Box, Grid, Heading, GridItem } from "@chakra-ui/react";
+import { Box, Grid, Heading, GridItem, Flex } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { baseApiClient } from "../../../lib/axios/baseApiClient";
 import { Statistics } from "./components/Statistics";
@@ -59,35 +59,60 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
       <Heading
         color="whiteAlpha.900"
         size={"lg"}
-        ml="14"
+        // ml="14"
         mb="4"
         textTransform={"capitalize"}
       >
         Hello Dr. {docFullName}
       </Heading>
-      <Grid w={"100%"} templateColumns="repeat(24, 1fr)" color="whiteAlpha.900">
-        <GridItem colSpan={12} colStart="2" rowSpan={"1"}>
+      <Grid
+        w={"100%"}
+        templateColumns="repeat(3, 1fr)"
+        color="whiteAlpha.900"
+        gap="4"
+      >
+        <GridItem
+          colSpan={["3", "3", "1", "1"]}
+          colStart={["1", "1", "1", "1"]}
+          colStart="1"
+          rowSpan={"1"}
+        >
           <Statistics
             numOfPatients={doctor.patients.length}
             numOfAppointments={doctor.appointments.length}
             numOfUpcomingAppointments={numOfUpcomingAppointments}
           />
         </GridItem>
-        <GridItem colSpan={12} colStart={"15"}>
+        <GridItem
+          colSpan={["3", "3", "2", "3"]}
+          colStart={["1", "1", "1", "2"]}
+          rowStart={["3", "3", "3", "1"]}
+          bg="red"
+          // w="100%"
+        >
           <TodayAppointments
             todayAppointments={todayAppointments}
             token={doctor.token}
           />
         </GridItem>
+
         <GridItem
-          colSpan={12}
-          colStart={"2"}
-          rowStart="3"
-          rowSpan={"5"}
-          mt="-250"
-          bg="gray.800"
+          // colSpan={12}
+          colSpan={["3", "3", "2", "1"]}
+          // colStart={"2"}
+          rowStart="4"
           height={"fit-content"}
+          mt={["0", "0", "0", "-19em"]}
         >
+          <Heading
+            color="whiteAlpha.900"
+            size={"lg"}
+            // ml="14"
+            mb="4"
+            textTransform={"capitalize"}
+          >
+            Future Appointment
+          </Heading>
           <UpcomingAppointments
             token={doctor.token}
             appointments={appointments}
