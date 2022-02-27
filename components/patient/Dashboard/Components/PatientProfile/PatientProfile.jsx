@@ -16,10 +16,9 @@ export const PatientProfile = ({ patient, appointmentStats }) => {
             patient={patient}
             appointmentStats={appointmentStats}
           />
-          {/* <Center height="100px">
-        </Center> */}
-          <Divider orientation="vertical" />
-          {/* <Box height={""} bg="red" width={"4"} /> */}
+          <Center marginX={"6"}>
+            <Divider height="100%" orientation="vertical" />
+          </Center>
           <PatientDetails patient={patient} />
         </Flex>
       </Box>
