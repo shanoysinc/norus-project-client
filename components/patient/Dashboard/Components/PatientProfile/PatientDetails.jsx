@@ -1,4 +1,12 @@
-import { Box, Flex, Grid, GridItem, Text, Divider } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  Text,
+  Divider,
+  Center,
+} from "@chakra-ui/react";
 import React from "react";
 import { Details } from "./Details";
 
@@ -6,14 +14,7 @@ export const PatientDetails = ({ patient }) => {
   const { gender, address, age, height, weight, phoneNumber, occupation } =
     patient;
   return (
-    <Grid
-      w="100%"
-      templateRows="repeat(2, 1fr)"
-      templateColumns="repeat(3, 1fr)"
-      // gap={4}
-      ml="10"
-    >
-      {" "}
+    <Grid w="100%" templateColumns="repeat(3, 1fr)">
       <GridItem colSpan={1}>
         <Details title="Gender" info={gender} />
       </GridItem>
