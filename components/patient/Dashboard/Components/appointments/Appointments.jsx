@@ -73,7 +73,7 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
     return (
       <Flex flexDirection={"column"} pl="10" pb="10">
         <Heading mb="10" color="whiteAlpha.900">
-          <Flex alignItems={"flex-end"}>
+          <Flex alignItems={"flex-end"} wrap={"wrap"}>
             <Text pr="10">Your Appointments</Text>{" "}
             <AppointmentModalButton token={token} doctor={doctor} />
           </Flex>
@@ -93,7 +93,7 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
   return (
     <Box>
       <Heading color="whiteAlpha.900">
-        <Flex alignItems={"flex-end"} mb="10" pl="10">
+        <Flex alignItems={"flex-end"} mb="10" pl="10" wrap={"wrap"}>
           <Text pr="10">Your Appointments</Text>{" "}
           <AppointmentModalButton token={token} doctor={doctor} />
         </Flex>

@@ -5,6 +5,7 @@ import { CustomSpinner } from "../../../../../shared/components/spinner/CustomSp
 import { Timeline } from "react-trivial-timeline";
 import { baseApiClient } from "../../../../../lib/axios/baseApiClient";
 import { TimlineEvent } from "./TimlineEvent";
+
 export const TimeLine = ({ token }) => {
   const { data, isLoading } = useQuery("patientTimline", () =>
     baseApiClient("/patient/timeline", {
@@ -36,22 +37,22 @@ export const TimeLine = ({ token }) => {
         height="350px"
         overflowY="auto"
       >
-        <Timeline lineColor={"black"}>
-          {timelineData.length < 1 ? (
-            <Center mt="38">
-              <Text color={"whiteAlpha.900"}>Your timeline is empty</Text>
-            </Center>
-          ) : (
-            timelineData.map((item) => (
+        {timelineData.length < 1 ? (
+          <Center mt="38" mr="20">
+            <Text color={"whiteAlpha.900"}>Your timeline is empty</Text>
+          </Center>
+        ) : (
+          <Timeline lineColor={"black"}>
+            {timelineData.map((item) => (
               <TimlineEvent
                 key={item._id}
                 createdAt={item.createdAt}
                 approve={item.approve}
                 symptom={item.appointment.symptom}
               />
-            ))
-          )}
-        </Timeline>
+            ))}
+          </Timeline>
+        )}
       </Box>
     </>
   );

@@ -1,16 +1,17 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 
 export const Details = ({ title, info }) => {
   return (
-    <Flex justifyContent={"center"} mr="12" h="100%">
+    <Box>
       <Flex
         flexDirection={"column"}
         alignItems="center"
         justifyContent={"center"}
+        padding="4"
       >
         <Text
-          fontSize={"md"}
+          fontSize={["sm", "sm", "md"]}
           color="teal.100"
           textAlign={"center"}
           textTransform="capitalize"
@@ -26,6 +27,6 @@ export const Details = ({ title, info }) => {
           {info}
         </Text>
       </Flex>
-    </Flex>
+    </Box>
   );
 };

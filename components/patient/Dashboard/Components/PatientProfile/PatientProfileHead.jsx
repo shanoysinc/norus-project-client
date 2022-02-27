@@ -15,54 +15,66 @@ export const PatientProfileHead = ({ patient, appointmentStats }) => {
   const doctorFirstName = doctor.firstName;
   const doctorLastName = doctor.lastName;
   return (
-    <Flex flexDirection={"column"}>
-      <Flex flexDirection={"column"} alignItems="center">
-        <Avatar size={"xl"} name={`${firstName} ${lastName}`} />
-        <Heading
-          size={"md"}
-          mt="2"
-          color="whiteAlpha.900"
-          textTransform={"capitalize"}
-        >
-          {`${firstName} ${lastName}`}
-        </Heading>
-        <Text fontSize={"sm"} color="whiteAlpha.900">
-          {email}
-        </Text>
+    <Box paddingX={"10"}>
+      <Flex justifyContent={"center"}>
+        <Flex flexDirection={"column"}>
+          <Flex flexDirection={"column"} alignItems="center">
+            <Avatar size={"xl"} name={`${firstName} ${lastName}`} />
+            <Heading
+              size={"md"}
+              mt="2"
+              color="whiteAlpha.900"
+              textTransform={"capitalize"}
+            >
+              {`${firstName} ${lastName}`}
+            </Heading>
+            <Text fontSize={"sm"} color="whiteAlpha.900">
+              {email}
+            </Text>
 
-        <Text
-          fontSize={"sm"}
-          color="whiteAlpha.900"
-          mt="2"
-          textAlign={"center"}
+            <Text
+              fontSize={"sm"}
+              color="whiteAlpha.900"
+              mt="2"
+              textAlign={"center"}
+            >
+              Assigned Doctor
+              <br />
+              <Badge colorScheme={"purple"} textTransform={"capitalize"}>
+                Dr. {`${doctorFirstName} ${doctorLastName}`}
+              </Badge>
+            </Text>
+          </Flex>
+          <Flex justifyContent={"center"} mt="6" gap={"4"}>
+            <Flex flexDirection={"column"} alignItems="center">
+              <Box fontWeight={"bold"} color="whiteAlpha.900">
+                {appointmentStats.numberOfAppointments}
+              </Box>
+              <Text fontSize={"xs"} color="whiteAlpha.900">
+                appointments
+              </Text>
+            </Flex>
+            <Center height="50px">
+              <Divider orientation="vertical" />
+            </Center>
+            <Flex flexDirection={"column"} alignItems="center">
+              <Box fontWeight={"bold"} color="whiteAlpha.900">
+                {appointmentStats.upComming}
+              </Box>
+              <Box fontSize={"xs"} color="whiteAlpha.900">
+                Upcoming
+              </Box>
+            </Flex>
+          </Flex>
+        </Flex>
+        <Center
+          marginX={"6"}
+          pr={"10"}
+          display={["none", "none", "none", "block"]}
         >
-          Assigned Doctor
-          <Badge colorScheme={"purple"} textTransform={"capitalize"}>
-            Dr. {`${doctorFirstName} ${doctorLastName}`}
-          </Badge>
-        </Text>
-      </Flex>
-      <Flex justifyContent={"space-between"} mt="6" gap={"4"}>
-        <Flex flexDirection={"column"} alignItems="center">
-          <Box fontWeight={"bold"} color="whiteAlpha.900">
-            {appointmentStats.numberOfAppointments}
-          </Box>
-          <Text fontSize={"xs"} color="whiteAlpha.900">
-            appointments
-          </Text>
-        </Flex>
-        <Center height="50px">
-          <Divider orientation="vertical" />
+          <Divider height="100%" orientation="vertical" />
         </Center>
-        <Flex flexDirection={"column"} alignItems="center">
-          <Box fontWeight={"bold"} color="whiteAlpha.900">
-            {appointmentStats.upComming}
-          </Box>
-          <Box fontSize={"xs"} color="whiteAlpha.900">
-            Upcoming
-          </Box>
-        </Flex>
       </Flex>
-    </Flex>
+    </Box>
   );
 };
