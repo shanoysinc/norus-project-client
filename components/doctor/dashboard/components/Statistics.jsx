@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { Icon } from "@chakra-ui/react";
-import { FaUserAlt, FaWheelchair, FaRegWindowMaximize } from "react-icons/fa";
+import { FaWheelchair, FaRegWindowMaximize } from "react-icons/fa";
 import { CustomIcon } from "../../../../shared/components/icon/CustomIcon";
 
 export const Statistics = ({
