@@ -96,8 +96,6 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
           colSpan={["3", "3", "2", "3"]}
           colStart={["1", "1", "1", "2"]}
           rowStart={["3", "3", "3", "1"]}
-          bg="red"
-          // w="100%"
         >
           <TodayAppointments
             todayAppointments={todayAppointments}
@@ -111,7 +109,7 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
           // colStart={"2"}
           rowStart="4"
           height={"fit-content"}
-          mt={["0", "0", "0", "-19em"]}
+          mt={["0", "0", "0", "-18.6em"]}
         >
           <Heading
             color="whiteAlpha.900"

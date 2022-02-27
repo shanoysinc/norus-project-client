@@ -14,7 +14,7 @@ export const UpcomingAppointments = ({ appointments, token }) => {
   );
 
   return (
-    <Accordion allowToggle defaultIndex={[0]} bg="gray.800">
+    <Accordion allowToggle defaultIndex={[0]} bg="gray.800" borderRadius={"4"}>
       <AccordionCustomItem
         title={"Tomorrow's Appointments"}
         appointments={tomorrowsAppointments}
