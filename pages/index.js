@@ -15,7 +15,6 @@ export default function Home() {
       <>
         <Grid
           h="100vh"
-          templateRows="repeat(24, 1fr)"
           templateColumns="repeat(24, 1fr)"
           gap={4}
           paddingX={"16"}
@@ -35,7 +34,7 @@ export default function Home() {
 
       <Center mb="2">
         <NextLink href="/login/doctor" passHref>
-          <Link>doctor's portal</Link>
+          <Link textTransform={"capitalize"}>doctor's login portal</Link>
         </NextLink>
       </Center>
     </div>
