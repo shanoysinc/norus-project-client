@@ -51,13 +51,13 @@ export function RootApp({ Component, pageProps }) {
             setAuth(data);
 
             if (!router.pathname.includes("/patient")) {
-              router.push("/patient");
+              return router.push("/patient");
             }
           }
         })
         .catch((error) => {
           localStorage.removeItem("token");
-          router.push("/login");
+          return router.push("/login");
         });
     }
     if (userRole === Roles.DOCTOR) {
@@ -74,7 +74,7 @@ export function RootApp({ Component, pageProps }) {
         })
         .catch((error) => {
           localStorage.removeItem("token");
-          router.push("/login");
+          return router.push("/login");
         });
     }
   }, []);
