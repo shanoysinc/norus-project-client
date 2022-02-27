@@ -63,7 +63,7 @@ export const CreateAppointmentModal = ({ isOpen, onClose, token, doctor }) => {
     }
 
     mutation.mutate({
-      doctor,
+      doctor: doctor._id,
       date: startDate,
       symptom,
       details,
