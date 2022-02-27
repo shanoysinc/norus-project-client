@@ -22,17 +22,20 @@ export default function Home() {
           <GridItem rowSpan={3} colSpan={24} rowStart="2">
             <Navbar />
           </GridItem>
-          <GridItem colSpan={13} rowSpan={14} rowStart="7">
+          <GridItem colSpan={[24, 24, 13]} rowSpan={14} rowStart="7">
             <JumbotronLeft />
           </GridItem>
-          <GridItem colSpan={14} rowSpan={14} rowStart="7">
+          <GridItem
+            colSpan={[24, 14]}
+            rowSpan={[14]}
+            rowStart={["24", " 22", "7"]}
+          >
             <JumbotronRight />
           </GridItem>
-          <GridItem colSpan={24} rowSpan={4} />
         </Grid>
       </>
 
-      <Center mb="2">
+      <Center mb="2" mt={["20em", "35em", "5em", "0"]}>
         <NextLink href="/login/doctor" passHref>
           <Link textTransform={"capitalize"}>doctor's login portal</Link>
         </NextLink>

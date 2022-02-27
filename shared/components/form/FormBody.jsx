@@ -9,7 +9,7 @@ export const FormBody = ({ children, isInvalid, isRequired }) => {
       borderRadius={"6"}
       isRequired={isRequired}
       bg="gray.50"
-      width={"md"}
+      width={["xs", "sm", "md"]}
       boxShadow="md"
       isInvalid={isInvalid}
     >
