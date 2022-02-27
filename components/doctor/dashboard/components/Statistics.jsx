@@ -18,7 +18,12 @@ export const Statistics = ({
       // w={"min-content"}
     >
       <Flex gap="4" wrap={["wrap", "wrap", "nowrap"]}>
-        <Box bg="gray.700" borderRadius={"4"} p="15">
+        <Box
+          bg="gray.700"
+          borderRadius={"4"}
+          p="15"
+          w={["100%", "100%", "fit-content"]}
+        >
           <Flex alignItems={"center"}>
             <CustomIcon bg="red">
               <Icon as={FaWheelchair} w={5} h={5} mt="1.5" />
