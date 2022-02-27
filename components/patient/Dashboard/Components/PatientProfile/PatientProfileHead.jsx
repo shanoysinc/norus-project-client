@@ -15,7 +15,12 @@ export const PatientProfileHead = ({ patient, appointmentStats }) => {
     <Flex flexDirection={"column"}>
       <Flex flexDirection={"column"} alignItems="center">
         <Avatar size="xl" name={`${firstName} ${lastName}`} />
-        <Heading size={"md"} mt="2" color="whiteAlpha.900">
+        <Heading
+          size={"md"}
+          mt="2"
+          color="whiteAlpha.900"
+          textTransform={"capitalize"}
+        >
           {`${firstName} ${lastName}`}
         </Heading>
         <Text fontSize={"sm"} color="whiteAlpha.900">

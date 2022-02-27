@@ -25,11 +25,12 @@ const Signup = () => {
   const [phoneNumber, setPhoneNumber] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [height, setHeight] = React.useState("");
-  const [weight, setWeight] = React.useState("");
-  const [occupation, setOccupation] = React.useState("");
-  const [address, setAddress] = React.useState("");
-  const [medicalHistoryDetails, setmedicalHistoryDetails] = React.useState("");
+  const [height, setHeight] = React.useState("N/A");
+  const [weight, setWeight] = React.useState("N/A");
+  const [occupation, setOccupation] = React.useState("N/A");
+  const [address, setAddress] = React.useState("N/A");
+  const [medicalHistoryDetails, setmedicalHistoryDetails] =
+    React.useState("N/A");
   const router = useRouter();
 
   const mutation = useMutation(
