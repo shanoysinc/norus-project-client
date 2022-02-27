@@ -1,12 +1,4 @@
-import {
-  Box,
-  Flex,
-  Grid,
-  GridItem,
-  Text,
-  Divider,
-  Center,
-} from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import React from "react";
 import { Details } from "./Details";
 
