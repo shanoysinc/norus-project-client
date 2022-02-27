@@ -18,15 +18,14 @@ const index = () => {
   return (
     <>
       <Grid
-        h="100%"
-        templateRows="repeat(24, 1fr)"
+        height={"max-content"}
         templateColumns="repeat(24, 1fr)"
         bg="gray.700"
       >
         <GridItem rowSpan={2} colSpan={24}>
           <UserNavBar name={patientFullName} />
         </GridItem>
-        <GridItem colSpan={24} rowSpan={24} rowStart="4">
+        <GridItem colSpan={24} rowSpan={20} rowStart="4">
           <DashBoard />
         </GridItem>
       </Grid>
