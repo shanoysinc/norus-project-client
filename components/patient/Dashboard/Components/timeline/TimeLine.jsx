@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, Center, Text } from "@chakra-ui/react";
 import React from "react";
 import { useQuery } from "react-query";
 import { CustomSpinner } from "../../../../../shared/components/spinner/CustomSpinner";
@@ -15,7 +15,9 @@ export const TimeLine = ({ token }) => {
   );
 
   if (isLoading) {
-    return <CustomSpinner color="white" />;
+    return (
+      <CustomSpinner left="75%" color="white" message="Loading Timline..." />
+    );
   }
 
   const timelineData = data.data.patientTimeline;
@@ -27,7 +29,6 @@ export const TimeLine = ({ token }) => {
 
       <Box
         bg={"gray.800"}
-        // p="10"
         pl="10"
         pt="4"
         pb="8"
@@ -36,14 +37,20 @@ export const TimeLine = ({ token }) => {
         overflowY="auto"
       >
         <Timeline lineColor={"black"}>
-          {timelineData.map((item) => (
-            <TimlineEvent
-              key={item._id}
-              createdAt={item.createdAt}
-              approve={item.approve}
-              symptom={item.appointment.symptom}
-            />
-          ))}
+          {timelineData.length < 1 ? (
+            <Center mt="38">
+              <Text color={"whiteAlpha.900"}>Your timeline is empty</Text>
+            </Center>
+          ) : (
+            timelineData.map((item) => (
+              <TimlineEvent
+                key={item._id}
+                createdAt={item.createdAt}
+                approve={item.approve}
+                symptom={item.appointment.symptom}
+              />
+            ))
+          )}
         </Timeline>
       </Box>
     </>
