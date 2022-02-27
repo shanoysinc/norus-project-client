@@ -4,7 +4,7 @@ import { useMutation } from "react-query";
 import { baseApiClient } from "../../lib/axios/baseApiClient";
 import { useAuth } from "../../hooks";
 import { useRouter } from "next/router";
-import { useErrroCheck } from "../../hooks/error/useErrroCheck";
+import { useErrorCheck } from "../../hooks/error/useErrorCheck";
 import validator from "validator";
 
 const index = () => {
@@ -12,7 +12,7 @@ const index = () => {
   const { setAuth } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { error, setError } = useErrroCheck();
+  const { error, setError } = useErrorCheck();
 
   const mutation = useMutation(
     (loginInfo) => baseApiClient.post("/patient/login", loginInfo),

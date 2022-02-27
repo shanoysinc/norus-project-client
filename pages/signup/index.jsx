@@ -7,7 +7,7 @@ import {
 } from "../../shared/components/form";
 import { RequiredFormItems } from "../../components/forms/RequiredFormItems";
 import { NotRequiredFormItems } from "../../components/forms/NotRequiredFormItems";
-import { useErrroCheck } from "../../hooks/error/useErrroCheck";
+import { useErrorCheck } from "../../hooks/error/useErrorCheck";
 import { useMutation } from "react-query";
 import { baseApiClient } from "../../lib/axios/baseApiClient";
 import validator from "validator";
@@ -15,7 +15,7 @@ import { useAuth } from "../../hooks";
 import { useRouter } from "next/router";
 
 const Signup = () => {
-  const { error, setError } = useErrroCheck();
+  const { error, setError } = useErrorCheck();
   const { setAuth } = useAuth();
 
   const [age, setAge] = React.useState(0);
