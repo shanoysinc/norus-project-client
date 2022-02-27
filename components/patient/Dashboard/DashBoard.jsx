@@ -25,15 +25,17 @@ export const DashBoard = () => {
       </Center>
     );
   }
+
+  console.log(auth.patient);
   return (
     <Grid w={"100%"} templateColumns="repeat(24, 1fr)">
-      <GridItem colSpan={12} colStart="2">
+      <GridItem colSpan={13} colStart="2">
         <PatientProfile
           patient={auth.patient}
           appointmentStats={appointmentStats}
         />
       </GridItem>
-      <GridItem colSpan={8} colStart={"15"}>
+      <GridItem colSpan={8} colStart={"16"}>
         <TimeLine token={auth.patient.token} />
       </GridItem>
       <GridItem colSpan={20} colStart={"2"} mt="10">

@@ -6,11 +6,14 @@ import {
   Box,
   Divider,
   Center,
+  Badge,
 } from "@chakra-ui/react";
 import React from "react";
 
 export const PatientProfileHead = ({ patient, appointmentStats }) => {
-  const { firstName, lastName, email } = patient;
+  const { firstName, lastName, email, doctor } = patient;
+  const doctorFirstName = doctor.firstName;
+  const doctorLastName = doctor.lastName;
   return (
     <Flex flexDirection={"column"}>
       <Flex flexDirection={"column"} alignItems="center">
@@ -25,6 +28,18 @@ export const PatientProfileHead = ({ patient, appointmentStats }) => {
         </Heading>
         <Text fontSize={"sm"} color="whiteAlpha.900">
           {email}
+        </Text>
+
+        <Text
+          fontSize={"sm"}
+          color="whiteAlpha.900"
+          mt="2"
+          textAlign={"center"}
+        >
+          Assign Doctor
+          <Badge colorScheme={"purple"} textTransform={"capitalize"}>
+            Dr. {`${doctorFirstName} ${doctorLastName}`}
+          </Badge>
         </Text>
       </Flex>
       <Flex justifyContent={"space-between"} mt="6" gap={"4"}>
