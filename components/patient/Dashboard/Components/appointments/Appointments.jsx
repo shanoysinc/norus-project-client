@@ -99,17 +99,23 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
           <AppointmentModalButton token={token} doctor={doctor} />
         </Flex>
       </Heading>
-      <Table variant="simple" size={"lg"} bg="gray.800" color="whiteAlpha.900">
+      <Table
+        variant="simple"
+        size={"lg"}
+        bg="gray.800"
+        color="whiteAlpha.900"
+        mb="10"
+      >
         <TableCaption color="whiteAlpha.900">
           list of your appointments
         </TableCaption>
         <Thead>
           <Tr>
-            <Th color="blue.400">Dates</Th>
-            <Th color="blue.400">symptoms</Th>
-            <Th color="blue.400">approve</Th>
-            <Th color="blue.400">time</Th>
-            <Th color="blue.400">detials</Th>
+            <Th color="teal.100">Dates</Th>
+            <Th color="teal.100">symptoms</Th>
+            <Th color="teal.100">approve</Th>
+            <Th color="teal.100">time</Th>
+            <Th color="teal.100">detials</Th>
           </Tr>
         </Thead>
         <Tbody>
