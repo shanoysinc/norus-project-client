@@ -56,7 +56,6 @@ const Signup = () => {
           message: "Please enter information in all required field",
         },
       });
-      console.log("got erro");
       return;
     }
     if (!validator.isEmail(email)) {
