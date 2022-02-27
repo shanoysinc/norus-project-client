@@ -67,7 +67,10 @@ export const UserNavBar = ({ name }) => {
             <MenuItem>Docs</MenuItem>
             <MenuItem>FAQ</MenuItem>
           </MenuGroup>
-          <DeleteUserModal token={auth.patient.token} />
+
+          {auth && auth.patient && (
+            <DeleteUserModal token={auth.patient.token} />
+          )}
         </MenuList>
       </Menu>
     </Flex>
