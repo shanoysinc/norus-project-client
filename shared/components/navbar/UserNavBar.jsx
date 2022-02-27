@@ -16,6 +16,7 @@ import { useRouter } from "next/router";
 import { baseApiClient } from "../../../lib/axios/baseApiClient";
 import { useAuth } from "../../../hooks";
 import { getUserToken } from "../../../lib/getUserToken";
+import { DeleteUserModal } from "./components/DeleteUserModal";
 
 export const UserNavBar = ({ name }) => {
   const { auth } = useAuth();
@@ -66,6 +67,7 @@ export const UserNavBar = ({ name }) => {
             <MenuItem>Docs</MenuItem>
             <MenuItem>FAQ</MenuItem>
           </MenuGroup>
+          <DeleteUserModal token={auth.patient.token} />
         </MenuList>
       </Menu>
     </Flex>
