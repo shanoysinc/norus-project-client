@@ -36,7 +36,7 @@ export const PatientProfileHead = ({ patient, appointmentStats }) => {
           mt="2"
           textAlign={"center"}
         >
-          Assign Doctor
+          Assigned Doctor
           <Badge colorScheme={"purple"} textTransform={"capitalize"}>
             Dr. {`${doctorFirstName} ${doctorLastName}`}
           </Badge>
@@ -52,7 +52,7 @@ export const PatientProfileHead = ({ patient, appointmentStats }) => {
           </Text>
         </Flex>
         <Center height="50px">
-          <Divider orientation="vertical" colorScheme={"red"} />
+          <Divider orientation="vertical" />
         </Center>
         <Flex flexDirection={"column"} alignItems="center">
           <Box fontWeight={"bold"} color="whiteAlpha.900">
