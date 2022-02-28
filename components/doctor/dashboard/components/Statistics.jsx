@@ -24,11 +24,11 @@ export const Statistics = ({
           p="15"
           w={["100%", "100%", "fit-content"]}
         >
-          <Flex alignItems={"center"}>
+          <Flex alignItems={"center"} justifyContent="center">
             <CustomIcon bg="red">
-              <Icon as={FaWheelchair} w={5} h={5} mt="1.5" />
+              <Icon as={FaWheelchair} w={4} h={4} mt="1.5" />
             </CustomIcon>
-            <Text fontSize={"md"} pl="2">
+            <Text fontSize={"sm"} pl="2">
               Patients
             </Text>
           </Flex>
@@ -37,11 +37,11 @@ export const Statistics = ({
           </Text>
         </Box>
         <Box bg="gray.700" borderRadius={"4"} p="15">
-          <Flex alignItems={"center"}>
+          <Flex alignItems={"center"} justifyContent="center">
             <CustomIcon bg="blue">
-              <Icon as={FaRegWindowMaximize} w={5} h={5} mt="1.5" />
+              <Icon as={FaRegWindowMaximize} w={4} h={4} mt="1.5" />
             </CustomIcon>
-            <Text fontSize={"md"} pl="2">
+            <Text fontSize={"sm"} pl="2">
               Total Appointments
             </Text>
           </Flex>
@@ -50,11 +50,11 @@ export const Statistics = ({
           </Text>
         </Box>
         <Box bg="gray.700" borderRadius={"4"} p="15">
-          <Flex alignItems={"center"}>
+          <Flex alignItems={"center"} justifyContent="center">
             <CustomIcon bg="green">
-              <Icon as={FaRegWindowMaximize} w={5} h={5} mt="1.5" />
+              <Icon as={FaRegWindowMaximize} w={4} h={4} mt="1.5" />
             </CustomIcon>
-            <Text fontSize={"md"} pl="2">
+            <Text fontSize={"sm"} pl="2">
               Upcoming Appointments
             </Text>
           </Flex>
