@@ -24,7 +24,7 @@ export const Statistics = ({
           p="15"
           w={["100%", "100%", "fit-content"]}
         >
-          <Flex alignItems={"center"} justifyContent="center">
+          <Flex alignItems={"center"}>
             <CustomIcon bg="red">
               <Icon as={FaWheelchair} w={4} h={4} mt="1.5" />
             </CustomIcon>
@@ -37,7 +37,7 @@ export const Statistics = ({
           </Text>
         </Box>
         <Box bg="gray.700" borderRadius={"4"} p="15">
-          <Flex alignItems={"center"} justifyContent="center">
+          <Flex alignItems={"center"}>
             <CustomIcon bg="blue">
               <Icon as={FaRegWindowMaximize} w={4} h={4} mt="1.5" />
             </CustomIcon>
@@ -50,7 +50,7 @@ export const Statistics = ({
           </Text>
         </Box>
         <Box bg="gray.700" borderRadius={"4"} p="15">
-          <Flex alignItems={"center"} justifyContent="center">
+          <Flex alignItems={"center"}>
             <CustomIcon bg="green">
               <Icon as={FaRegWindowMaximize} w={4} h={4} mt="1.5" />
             </CustomIcon>
