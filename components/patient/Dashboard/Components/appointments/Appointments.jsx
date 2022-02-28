@@ -52,7 +52,7 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
 
   if (isLoading) {
     return (
-      <Flex flexDirection={"column"}>
+      <Flex flexDirection={"column"} h="20vh">
         <Center>
           <Spinner
             thickness="4px"

@@ -12,7 +12,7 @@ export const DashBoard = () => {
     upComming: 0,
   });
 
-  if (true) {
+  if (!auth) {
     return (
       <Center mt="10%" h="69vh">
         <Spinner
