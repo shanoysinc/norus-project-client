@@ -9,18 +9,15 @@ export const CustomSpinner = ({
 }) => {
   return (
     <Box position={"absolute"} top={top} left={left}>
-      <Flex flexDirection={"column"}>
+      <Flex flexDirection={"column"} alignItems="center">
         <Spinner
           thickness="4px"
           speed="0.65s"
           emptyColor="gray.200"
           color="blue.500"
           size="xl"
-          ml="4"
         />
-        <Center>
-          <Text color={color}>{message}</Text>
-        </Center>
+        <Text color={color}>{message}</Text>
       </Flex>
     </Box>
   );
