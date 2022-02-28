@@ -15,7 +15,7 @@ export const Navbar = () => {
   return (
     <Flex>
       <Flex justifyContent={"space-between"} w="100%">
-        <Box paddingY="7" paddingRight={"12"}>
+        <Box paddingY="7" paddingRight={["0", "10"]}>
           <Heading size={["md"]}>
             <Flex>
               <Text color="telegram.600" fontSize={["3xl", "larger"]}>
@@ -36,7 +36,7 @@ export const Navbar = () => {
             <Spacer />
           </Flex>
         </Box>
-        <Flex>
+        <Flex w="100%" justifyContent={"flex-end"} mr={["14", "0"]}>
           <NavLink to={"/login"} name="log in" />
 
           <Box paddingY="6">
