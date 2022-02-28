@@ -9,6 +9,7 @@ import {
   MenuGroup,
   MenuDivider,
   Avatar,
+  Spinner,
 } from "@chakra-ui/react";
 import { NavbarLogo } from "./components";
 import { useMutation } from "react-query";
@@ -17,28 +18,38 @@ import { baseApiClient } from "../../../lib/axios/baseApiClient";
 import { useAuth } from "../../../hooks";
 import { getUserToken } from "../../../lib/getUserToken";
 import { DeleteUserModal } from "./components/DeleteUserModal";
+import { CustomSpinner } from "../spinner/CustomSpinner";
 
 export const UserNavBar = ({ name }) => {
   const { auth } = useAuth();
   const router = useRouter();
 
-  const mutation = useMutation(() => baseApiClient.post("/user/logout"), {
-    headers: {
-      authorization: `Bearer ${getUserToken(auth)}`,
-    },
-    onSuccess: () => {
-      localStorage.removeItem("token");
-      router.push("/");
-    },
-    onError: () => {
-      router.push("/");
-    },
-  });
+  const { mutate, isLoading } = useMutation(
+    () => baseApiClient.post("/user/logout"),
+    {
+      headers: {
+        authorization: `Bearer ${getUserToken(auth)}`,
+      },
+      onSuccess: () => {
+        localStorage.removeItem("token");
+        router.push("/");
+      },
+      onError: () => {
+        router.push("/");
+      },
+    }
+  );
+
+  if (isLoading) {
+    return (
+      <CustomSpinner color="white" message="Please wait while logging out.." />
+    );
+  }
 
   const logOutHandler = () => {
     localStorage.removeItem("token");
 
-    mutation.mutate();
+    mutate();
   };
   return (
     <Flex
