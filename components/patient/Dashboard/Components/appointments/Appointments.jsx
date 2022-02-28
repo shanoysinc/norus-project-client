@@ -110,17 +110,34 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
         </TableCaption>
         <Thead>
           <Tr>
-            <Th color="teal.100">Dates</Th>
+            <Th
+              display={["none", "table-cell", "table-cell", "table-cell"]}
+              color="teal.100"
+            >
+              Dates
+            </Th>
             <Th color="teal.100">symptoms</Th>
             <Th color="teal.100">approve</Th>
-            <Th color="teal.100">time</Th>
-            <Th color="teal.100">detials</Th>
+            <Th
+              display={["none", "table-cell", "table-cell", "table-cell"]}
+              color="teal.100"
+            >
+              time
+            </Th>
+            <Th
+              display={["none", "none", "table-cell", "table-cell"]}
+              color="teal.100"
+            >
+              detials
+            </Th>
           </Tr>
         </Thead>
         <Tbody>
           {sortAppointment.map((appointment, index) => (
             <Tr key={index}>
-              <Td>{format(new Date(appointment.date), "MMM dd, yyyy.")}</Td>
+              <Td display={["none", "table-cell", "table-cell", "table-cell"]}>
+                {format(new Date(appointment.date), "MMM dd, yyyy.")}
+              </Td>
               <Td>
                 <Badge ml="4" colorScheme={"yellow"}>
                   {appointment.symptom}
@@ -137,8 +154,12 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
                   </Badge>
                 )}
               </Td>
-              <Td>{format(parseISO(appointment.time), "h:mm a")}</Td>
-              <Td>{appointment.details}</Td>
+              <Td display={["none", "table-cell", "table-cell", "table-cell"]}>
+                {format(parseISO(appointment.time), "h:mm a")}
+              </Td>
+              <Td display={["none", "none", "table-cell", "table-cell"]}>
+                {appointment.details}
+              </Td>
             </Tr>
           ))}
         </Tbody>
