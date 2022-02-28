@@ -30,8 +30,6 @@ yarn dev
 ```
 
 - [React](https://reactjs.org/): Javascript library use to built the Website
-
-- [Typescript](https://www.typescriptlang.org/) : Programming language used!
 - [ChakraUI](https://chakra-ui.com/docs/getting-started) : For styling
 
 **Shanoy Sinc**
