@@ -128,7 +128,7 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
               display={["none", "none", "table-cell", "table-cell"]}
               color="teal.100"
             >
-              detials
+              details
             </Th>
           </Tr>
         </Thead>
