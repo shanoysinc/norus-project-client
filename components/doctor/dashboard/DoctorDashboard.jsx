@@ -99,7 +99,7 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
         >
           <Heading size={"md"} mb="4" mt={["5", "5", "5", "-10"]}>
             {" "}
-            Today's Appointment
+            Today's Appointments
           </Heading>
           <TodayAppointments
             todayAppointments={todayAppointments}
