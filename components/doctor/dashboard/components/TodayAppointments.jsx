@@ -7,10 +7,11 @@ export const TodayAppointments = ({ todayAppointments, token }) => {
     <Box
       bg="gray.800"
       paddingX={"10"}
-      paddingY="5"
+      paddingY="25"
       borderRadius={"4"}
       height="500px"
       overflowY={"auto"}
+      scrollBehavior="smooth"
     >
       {todayAppointments.length < 1 ? (
         <Text fontSize={"sm"} mt="10" textAlign={"center"}>
