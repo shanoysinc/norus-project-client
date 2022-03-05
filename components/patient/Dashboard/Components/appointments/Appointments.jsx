@@ -72,14 +72,14 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
   if (!hasAppointments) {
     return (
       <Flex flexDirection={"column"} pl="10" pb="10">
-        <Heading mb="10" color="whiteAlpha.900">
+        <Heading mb="10" color="whiteAlpha.800">
           <Flex alignItems={"flex-end"} wrap={"wrap"}>
             <Text pr="10">Your Appointments</Text>{" "}
             <AppointmentModalButton token={token} doctor={doctor} />
           </Flex>
         </Heading>
 
-        <Text color="whiteAlpha.900">You current have no appointments</Text>
+        <Text color="whiteAlpha.800">You current have no appointments</Text>
       </Flex>
     );
   }
@@ -92,7 +92,7 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
 
   return (
     <Box>
-      <Heading color="whiteAlpha.900">
+      <Heading color="whiteAlpha.800">
         <Flex alignItems={"flex-end"} mb="10" pl="10" wrap={"wrap"}>
           <Text pr="10">Your Appointments</Text>{" "}
           <AppointmentModalButton token={token} doctor={doctor} />
@@ -102,10 +102,10 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
         variant="simple"
         size={"lg"}
         bg="gray.800"
-        color="whiteAlpha.900"
+        color="whiteAlpha.800"
         mb="10"
       >
-        <TableCaption color="whiteAlpha.900">
+        <TableCaption color="whiteAlpha.800">
           list of your appointments
         </TableCaption>
         <Thead>

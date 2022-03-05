@@ -57,8 +57,8 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
   return (
     <Box marginX="10" marginY={"2"}>
       <Heading
-        color="whiteAlpha.900"
-        size={"lg"}
+        color="whiteAlpha.800"
+        size={"xl"}
         // ml="14"
         mb="4"
         textTransform={"capitalize"}
@@ -66,7 +66,7 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
         Hello Dr. {docFullName}
       </Heading>
       <Heading
-        color="whiteAlpha.900"
+        color="whiteAlpha.800"
         size={"md"}
         // ml="14"
         mb="4"
@@ -77,7 +77,7 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
       <Grid
         w={"100%"}
         templateColumns="repeat(3, 1fr)"
-        color="whiteAlpha.900"
+        color="whiteAlpha.800"
         gap="4"
       >
         <GridItem

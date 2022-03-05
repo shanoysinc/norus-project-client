@@ -39,7 +39,7 @@ export const TimeLine = ({ token }) => {
       >
         {timelineData.length < 1 ? (
           <Center mt="38" mr="20">
-            <Text color={"whiteAlpha.900"}>Your timeline is empty</Text>
+            <Text color={"whiteAlpha.800"}>Your timeline is empty</Text>
           </Center>
         ) : (
           <Timeline lineColor={"black"}>

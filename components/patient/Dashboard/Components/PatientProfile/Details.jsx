@@ -21,7 +21,7 @@ export const Details = ({ title, info }) => {
         <Text
           fontSize={"xs"}
           fontWeight="semibold"
-          color="whiteAlpha.900"
+          color="whiteAlpha.800"
           textAlign={"center"}
         >
           {info}

@@ -23,18 +23,18 @@ export const PatientProfileHead = ({ patient, appointmentStats }) => {
             <Heading
               size={"md"}
               mt="2"
-              color="whiteAlpha.900"
+              color="whiteAlpha.800"
               textTransform={"capitalize"}
             >
               {`${firstName} ${lastName}`}
             </Heading>
-            <Text fontSize={"sm"} color="whiteAlpha.900">
+            <Text fontSize={"sm"} color="whiteAlpha.800">
               {email}
             </Text>
 
             <Text
               fontSize={"sm"}
-              color="whiteAlpha.900"
+              color="whiteAlpha.800"
               mt="2"
               textAlign={"center"}
             >
@@ -47,7 +47,7 @@ export const PatientProfileHead = ({ patient, appointmentStats }) => {
           </Flex>
           <Flex justifyContent={"center"} mt="6" gap={"4"}>
             <Flex flexDirection={"column"} alignItems="center">
-              <Box fontWeight={"bold"} color="whiteAlpha.900">
+              <Box fontWeight={"bold"} color="whiteAlpha.800">
                 {appointmentStats.numberOfAppointments}
               </Box>
               <Text fontSize={"xs"} color="whiteAlpha.900">
@@ -58,10 +58,10 @@ export const PatientProfileHead = ({ patient, appointmentStats }) => {
               <Divider orientation="vertical" />
             </Center>
             <Flex flexDirection={"column"} alignItems="center">
-              <Box fontWeight={"bold"} color="whiteAlpha.900">
+              <Box fontWeight={"bold"} color="whiteAlpha.800">
                 {appointmentStats.upComming}
               </Box>
-              <Box fontSize={"xs"} color="whiteAlpha.900">
+              <Box fontSize={"xs"} color="whiteAlpha.800">
                 Upcoming
               </Box>
             </Flex>
