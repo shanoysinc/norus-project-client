@@ -68,7 +68,7 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
       <Heading
         color="whiteAlpha.800"
         size={"md"}
-        // ml="14"
+        mt={["5", "5", "5", "0"]}
         mb="4"
         textTransform={"capitalize"}
       >
@@ -97,6 +97,10 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
           colStart={["1", "1", "1", "2"]}
           rowStart={["3", "3", "3", "1"]}
         >
+          <Heading size={"md"} mb="4" mt={["5", "5", "5", "-10"]}>
+            {" "}
+            Today's Appointment
+          </Heading>
           <TodayAppointments
             todayAppointments={todayAppointments}
             token={doctor.token}
@@ -110,11 +114,12 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
           rowStart="4"
           height={"fit-content"}
           mt={["0", "0", "0", "-18.6em"]}
+          mb="10"
         >
           <Heading
             color="whiteAlpha.900"
             size={"md"}
-            // ml="14"
+            mt={["5", "5", "5", "0"]}
             mb="4"
             textTransform={"capitalize"}
           >

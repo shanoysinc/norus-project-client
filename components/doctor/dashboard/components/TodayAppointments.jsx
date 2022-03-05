@@ -12,7 +12,6 @@ export const TodayAppointments = ({ todayAppointments, token }) => {
       height="500px"
       overflowY={"auto"}
     >
-      <Heading size={"md"}> Today's Appointment</Heading>
       {todayAppointments.length < 1 ? (
         <Text fontSize={"sm"} mt="10" textAlign={"center"}>
           Your Schedule is free for the day😊
