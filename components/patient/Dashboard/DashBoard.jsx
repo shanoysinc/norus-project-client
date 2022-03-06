@@ -43,7 +43,7 @@ export const DashBoard = () => {
         >
           <TimeLine token={auth.patient.token} />
         </GridItem>
-        <GridItem colSpan={20} colStart={"2"} mt={["20", "20", "20", "4"]}>
+        <GridItem colSpan={20} colStart={"2"} mt={["20", "20", "20", "-16"]}>
           <Appointments
             doctor={auth.patient.doctor}
             token={auth.patient.token}
