@@ -3,12 +3,10 @@ import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
   TableCaption,
-  Heading,
   Spinner,
   Center,
   Flex,
@@ -19,7 +17,7 @@ import {
 import { useQuery } from "react-query";
 import { baseApiClient } from "../.../../../../../../lib/axios/baseApiClient.js";
 import { format, parseISO, isAfter } from "date-fns";
-import { AppointmentModalButton } from "./AppointmentModalButton.jsx";
+import { AppointmentHeading } from "./AppointmentHeading.jsx";
 
 export const Appointments = ({ token, setAppointmentStats, doctor }) => {
   const { data, isLoading } = useQuery(
@@ -71,14 +69,8 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
 
   if (!hasAppointments) {
     return (
-      <Flex flexDirection={"column"} pl="10" pb="10">
-        <Heading mb="10" color="whiteAlpha.800">
-          <Flex alignItems={"flex-end"} wrap={"wrap"}>
-            <Text pr="10">Your Appointments</Text>{" "}
-            <AppointmentModalButton token={token} doctor={doctor} />
-          </Flex>
-        </Heading>
-
+      <Flex flexDirection={"column"} pb="10">
+        <AppointmentHeading token={token} doctor={doctor} />
         <Text color="whiteAlpha.800">You current have no appointments</Text>
       </Flex>
     );
@@ -92,12 +84,8 @@ export const Appointments = ({ token, setAppointmentStats, doctor }) => {
 
   return (
     <Box>
-      <Heading color="whiteAlpha.800">
-        <Flex alignItems={"flex-end"} mb="10" pl="10" wrap={"wrap"}>
-          <Text pr="10">Your Appointments</Text>{" "}
-          <AppointmentModalButton token={token} doctor={doctor} />
-        </Flex>
-      </Heading>
+      <AppointmentHeading token={token} doctor={doctor} />
+
       <Table
         variant="simple"
         size={"lg"}
