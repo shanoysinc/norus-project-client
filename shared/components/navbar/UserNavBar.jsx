@@ -70,14 +70,10 @@ export const UserNavBar = ({ name }) => {
         </MenuButton>
         <MenuList>
           <MenuGroup title="Profile">
-            <MenuItem>Edit Profile</MenuItem>
+            {/* <MenuItem>Edit Profile</MenuItem> */}
             <MenuItem onClick={logOutHandler}>Log out</MenuItem>
           </MenuGroup>
           <MenuDivider />
-          <MenuGroup title="Help">
-            <MenuItem>Docs</MenuItem>
-            <MenuItem>FAQ</MenuItem>
-          </MenuGroup>
 
           {auth && auth.patient && (
             <DeleteUserModal token={auth.patient.token} />
