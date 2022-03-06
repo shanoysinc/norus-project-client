@@ -34,7 +34,7 @@ export const TimeLine = ({ token }) => {
         pt="4"
         pb="8"
         borderRadius={"4"}
-        height="350px"
+        height="450px"
         overflowY="auto"
       >
         {timelineData.length < 1 ? (
