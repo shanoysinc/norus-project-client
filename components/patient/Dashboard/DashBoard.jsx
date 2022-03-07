@@ -29,14 +29,14 @@ export const DashBoard = () => {
   return (
     <>
       <Grid templateColumns="repeat(24, 1fr)" mt={["20", "20", "20", "10"]}>
-        <GridItem colSpan={[20, 22, 22, 13]} colStart={["2", "2", "2", "2"]}>
+        <GridItem colSpan={[22, 22, 22, 13]} colStart={["2", "2", "2", "2"]}>
           <PatientProfile
             patient={auth.patient}
             appointmentStats={appointmentStats}
           />
         </GridItem>
         <GridItem
-          colSpan={[20, 20, 20, 8]}
+          colSpan={[22, 20, 20, 8]}
           colStart={["2", "2", "2", "16"]}
           rowStart={["2", "2", "2,", "1"]}
           mt={["20", "20", "20", "0"]}
