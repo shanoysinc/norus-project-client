@@ -36,7 +36,7 @@ export const Navbar = () => {
             <Spacer />
           </Flex>
         </Box>
-        <Flex w="100%" justifyContent={"flex-end"} mr={["14", "0"]}>
+        <Flex w="100%" justifyContent={"flex-end"} mr={["4", "0"]}>
           <NavLink to={"/login"} name="log in" />
 
           <Box paddingY="6">
