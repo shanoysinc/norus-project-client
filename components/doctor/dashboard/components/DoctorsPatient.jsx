@@ -43,7 +43,7 @@ export const DoctorsPatient = ({
   };
   return (
     <>
-      <Box mt="6" bg="gray.700" p="4" borderRadius={"4"}>
+      <Box mt="4" bg="gray.700" p="4" borderRadius={"4"}>
         <Flex justifyContent="space-between">
           <Box onClick={onOpen} cursor="pointer">
             <Flex>
