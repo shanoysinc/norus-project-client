@@ -28,6 +28,7 @@ export const TodayAppointments = ({ todayAppointments, token }) => {
             name={`${appointment.patient.firstName} ${appointment.patient.lastName}`}
             symptom={appointment.symptom}
             time={appointment.time}
+            details={appointment.details}
           />
         ))
       )}

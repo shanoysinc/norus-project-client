@@ -43,6 +43,7 @@ export const AccordionCustomItem = ({ title, appointments, token }) => {
               symptom={appointment.symptom}
               time={appointment.time}
               date={appointment.date}
+              details={appointment.details}
             />
           </AccordionPanel>
         ))
