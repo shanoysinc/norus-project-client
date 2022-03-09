@@ -5,7 +5,7 @@ export const NavbarLogo = () => {
   return (
     <Heading size="md">
       <Flex alignItems={"baseline"}>
-        <Text color="telegram.600" fontSize={"4xl"}>
+        <Text color="telegram.600" fontSize={"3xl"}>
           Medi
         </Text>
         <Text fontSize={"larger"} color="whiteAlpha.900">
