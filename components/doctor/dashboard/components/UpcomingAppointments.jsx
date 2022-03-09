@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { Accordion } from "@chakra-ui/react";
-import { isTomorrow, addDays, isAfter } from "date-fns";
+import { isTomorrow, addDays, isAfter, isBefore } from "date-fns";
 import { AccordionCustomItem } from "./AccordionCustomItem";
 
 export const UpcomingAppointments = ({ appointments, token }) => {
+  const pastAppointments = appointments.filter((appointment) =>
+    isBefore(new Date(appointment.date), new Date())
+  );
   const tomorrowsAppointments = appointments.filter((appointment) =>
     isTomorrow(new Date(appointment.date))
   );
@@ -24,6 +27,11 @@ export const UpcomingAppointments = ({ appointments, token }) => {
         token={token}
         title={"Upcoming Appointments"}
         appointments={upCommingAppointments}
+      />
+      <AccordionCustomItem
+        token={token}
+        title={"Past Appointments"}
+        appointments={pastAppointments}
       />
     </Accordion>
   );

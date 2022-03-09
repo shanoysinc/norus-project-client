@@ -1,9 +1,10 @@
-import { Avatar, Box, Flex, Icon, Text } from "@chakra-ui/react";
-import { format, parseISO } from "date-fns";
+import { Avatar, Badge, Box, Flex, Icon, Text } from "@chakra-ui/react";
+import { format, isAfter, isBefore, parseISO, subDays } from "date-fns";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { useMutation, useQueryClient } from "react-query";
 import { baseApiClient } from "../../../../lib/axios/baseApiClient";
+import { DoctorsPatientBadge } from "./DoctorsPatientBadge";
 
 export const DoctorsPatient = ({
   name,
@@ -14,6 +15,9 @@ export const DoctorsPatient = ({
   approve,
   date,
 }) => {
+  const yeserdayDate = subDays(new Date(), 1);
+  const isPastAppointment = isAfter(new Date(date), yeserdayDate);
+
   const queryClient = useQueryClient();
 
   const mutation = useMutation(
@@ -51,15 +55,19 @@ export const DoctorsPatient = ({
             {format(new Date(date), "MMM dd, yyyy.")}
           </Text>
           <Flex alignItems={"center"}>
-            <Icon
-              cursor={"pointer"}
-              onClick={updateAppointment}
-              color={approve ? "green.300" : "red.300"}
-              as={FaCheckCircle}
-              w={5}
-              h={5}
-              mt="1.5"
-            />
+            {isPastAppointment ? (
+              <Icon
+                cursor={"pointer"}
+                onClick={updateAppointment}
+                color={approve ? "green.300" : "red.300"}
+                as={FaCheckCircle}
+                w={5}
+                h={5}
+                mt="1.5"
+              />
+            ) : (
+              <DoctorsPatientBadge approve={approve} />
+            )}
             <Text fontSize={"sm"} mt="1" pl="2">
               {format(parseISO(time), "h:mm a")}
             </Text>
