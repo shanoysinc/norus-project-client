@@ -83,7 +83,6 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
         <GridItem
           colSpan={["3", "3", "1", "1"]}
           colStart={["1", "1", "1", "1"]}
-          colStart="1"
           rowSpan={"1"}
         >
           <Statistics
