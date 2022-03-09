@@ -36,7 +36,7 @@ export const CreateAppointmentModal = ({ isOpen, onClose, token, doctor }) => {
   const toast = useToast();
   const [startDate, setStartDate] = useState(new Date());
   const [symptom, setSymptom] = useState("Check in with Doctor");
-  const [details, setDetails] = useState("");
+  const [details, setDetails] = useState("N/A");
   const queryClient = useQueryClient();
 
   const symptomHandler = (e) => {
@@ -78,6 +78,7 @@ export const CreateAppointmentModal = ({ isOpen, onClose, token, doctor }) => {
       details,
       time: startDate,
     });
+    setDetails("N/A");
   };
 
   return (
