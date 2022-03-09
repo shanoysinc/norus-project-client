@@ -75,7 +75,7 @@ export const CreateAppointmentModal = ({ isOpen, onClose, token, doctor }) => {
       doctor: doctor._id,
       date: startDate,
       symptom,
-      details,
+      details: details.trim() == "" ? "N/A" : details.trim(),
       time: startDate,
     });
     setDetails("N/A");
