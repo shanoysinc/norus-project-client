@@ -1,5 +1,5 @@
-import { Avatar, Badge, Box, Flex, Icon, Text } from "@chakra-ui/react";
-import { format, isAfter, isBefore, parseISO, subDays } from "date-fns";
+import { Avatar, Box, Flex, Icon, Text } from "@chakra-ui/react";
+import { format, isAfter, parseISO, subDays } from "date-fns";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { useMutation, useQueryClient } from "react-query";
@@ -51,9 +51,6 @@ export const DoctorsPatient = ({
           </Flex>
         </Box>
         <Box pl="5">
-          <Text fontSize={"xs"} mt="1" textAlign={"left"}>
-            {format(new Date(date), "MMM dd, yyyy.")}
-          </Text>
           <Flex alignItems={"center"}>
             {isPastAppointment ? (
               <Icon
@@ -61,16 +58,23 @@ export const DoctorsPatient = ({
                 onClick={updateAppointment}
                 color={approve ? "green.300" : "red.300"}
                 as={FaCheckCircle}
-                w={5}
-                h={5}
+                w={8}
+                h={8}
                 mt="1.5"
               />
             ) : (
               <DoctorsPatientBadge approve={approve} />
             )}
-            <Text fontSize={"sm"} mt="1" pl="2">
-              {format(parseISO(time), "h:mm a")}
-            </Text>
+            <Box ml="6">
+              <Flex flexDirection={"column"}>
+                <Text fontSize={"xs"} mt="1">
+                  {format(new Date(date), "MMM dd, yyyy.")}
+                </Text>
+                <Text fontSize={"sm"} mt="1">
+                  {format(parseISO(time), "h:mm a")}
+                </Text>
+              </Flex>
+            </Box>
           </Flex>
         </Box>
       </Flex>
