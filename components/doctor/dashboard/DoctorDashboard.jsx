@@ -58,7 +58,7 @@ export const DoctorDashboard = ({ doctor, docFullName }) => {
     <Box marginX="10" marginY={"2"}>
       <Heading
         color="whiteAlpha.800"
-        size={"xl"}
+        size={"lg"}
         // ml="14"
         mb="4"
         textTransform={"capitalize"}
