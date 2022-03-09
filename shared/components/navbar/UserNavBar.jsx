@@ -55,7 +55,7 @@ export const UserNavBar = ({ name }) => {
     <Flex
       bg="gray.800"
       paddingX={"6"}
-      paddingY={"3"}
+      paddingY={"1"}
       justifyContent={"space-between"}
       alignItems="center"
     >
@@ -66,7 +66,7 @@ export const UserNavBar = ({ name }) => {
       </Flex>
       <Menu>
         <MenuButton>
-          <Avatar size="md" name={name} />
+          <Avatar size="sm" name={name} />
         </MenuButton>
         <MenuList>
           <MenuGroup title="Profile">
